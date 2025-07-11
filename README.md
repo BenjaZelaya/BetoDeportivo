@@ -1,12 +1,8 @@
-# React + Vite
+Welcome to BetoDeportivo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BetoDeportivo es mucho más que una tienda: es tu aliado en el camino hacia una vida activa, saludable y con estilo. Nos especializamos en ropa deportiva de alta calidad, diseñada para acompañarte en cada entrenamiento, partido o rutina diaria.
 
-Currently, two official plugins are available:
+Ya seas principiante, aficionado o atleta de alto rendimiento, en BetoDeportivo encontrás la indumentaria ideal para moverte con comodidad, rendimiento y actitud.
+💪 Calidad, 🏃‍♂️ rendimiento y 👕 estilo en cada prenda.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Viví el deporte. Vestite con BetoDeportivo.
