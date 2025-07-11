@@ -1,0 +1,48 @@
+/* CarouselHomepage.css */
+
+.carousel-Homepage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner-Homepage {
+  width: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 470px; /* 🔺 altura base actualizada */
+}
+
+.carousel-image-Homepage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-button-Homepage {
+  filter: drop-shadow(0 0 3px #000);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* 🔽 Responsive: reduce altura en pantallas más chicas */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    height: 200px;
+  }
+}

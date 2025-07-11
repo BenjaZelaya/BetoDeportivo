@@ -1,0 +1,72 @@
+.draggable-card-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  perspective: 3000px;
+  background-color: rgba(78, 50, 8, 0.5);
+}
+
+.draggable-card-body {
+  position: absolute;
+  min-height: 24rem;
+  width: 20rem;
+  overflow: visible;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform-style: preserve-3d;
+  border-bottom: 30px solid rgb(173, 169, 169);
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.draggable-card-body:active {
+  cursor: grabbing;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.draggable-card-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  user-select: none;
+  border-radius: 0.5rem;
+}
+
+.card-image {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  height: 20rem;
+  width: 100%;
+  pointer-events: none;
+}
+
+.card-title {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .draggable-card-body {
+    width: 100%;
+    min-height: 20rem;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .draggable-card-container {
+    width: 100%;
+    height: auto;
+    perspective: none;
+  }
+}

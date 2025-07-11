@@ -1,0 +1,67 @@
+/* src/Style/CuadriculaImagenes.css */
+
+.Cuadricula-Grid-Homepage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 0px;
+    padding: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Cuadricula-Columna-Homepage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Cuadricula-Imagen-Homepage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.Cuadricula-Overlay-Homepage {
+  position: absolute;
+  bottom: 10px;   
+  left: 10px;     
+  z-index: 2;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Cuadricula-Texto-Homepage {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.Cuadricula-Boton-Homepage {
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Cuadricula-Boton-Homepage:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .Grid-Homepage {
+        grid-template-columns: 1fr;
+    }
+
+    .Columna-Homepage {
+        height: 250px;
+    }
+}
