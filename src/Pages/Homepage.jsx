@@ -1,7 +1,6 @@
 import React from "react";
 import CarouselHomepage from "../Components/CarouselHomepage";
 import CuadriculaImagenes from "../Components/CuadriculaImagenes";
-import DraggableCardDemo from "../Components/DraggableCardDemo";
 import { BackgroundBeamsWithCollision } from "../Components/ui/background-beams-with-collision";
 import MovimientoCarousel from "../Components/Movimiento-Carousel";
 import '../Style/HomePage.css';
@@ -9,9 +8,8 @@ import '../Style/HomePage.css';
 const HomePage = () => {
   return (
     <>
-      <body>
+      <body className="conteiner">
         <div className="conteiner-homepage">
-          <CarouselHomepage />
           <BackgroundBeamsWithCollision>
             <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
               CORRE CON{" "}
@@ -25,11 +23,11 @@ const HomePage = () => {
               </div>
             </h2>
           </BackgroundBeamsWithCollision>
+          <CarouselHomepage />
+
           <CuadriculaImagenes />
 
-          <div className="py-16 px-4 bg-white dark:bg-neutral-900">
-            <DraggableCardDemo />
-          </div>
+          
 
           <div>
             <MovimientoCarousel />

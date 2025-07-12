@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nike Air Force 1 '07",
+    "descripcion": "ESTILO LEGENDARIO Y REFINADO.\n\nEl fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.\nBeneficios\n•Los revestimientos cosidos en la parte superior añaden un estilo de herencia con durabilidad y...",
+    "precio": 199.999,
+    "stock": 4,
+    "imagenUrl": "./uploads/1752361033720.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Air Jordan 1 Low",
+    "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
+    "precio": 199.999,
+    "stock": 4,
+    "imagenUrl": "/uploads/1752361033720.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Nike Air Force 1 '07 (White)",
+    "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
+    "precio": 199.999,
+    "stock": 4,
+    "imagenUrl": "/uploads/1752361033720.jpg"
+  }
+]

@@ -1,0 +1,25 @@
+.Navbar-LogoVideo {
+  max-height: 56px;
+  transition: all 0.3s ease;
+}
+
+.Navbar-Link,
+.Navbar-MobileLink {
+  text-decoration: none !important;
+}
+
+.Navbar-Underline {
+  transition: width 0.3s ease;
+}
+
+.Navbar-MobileMenu {
+  transition: transform 0.3s ease;
+}
+
+.Navbar-Text {
+  font-size: 1rem;
+}
+
+.Navbar-Button {
+  font-weight: 600;
+}
