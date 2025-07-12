@@ -39,7 +39,7 @@
 
 .card-image {
   border-radius: 0.5rem;
-  object-fit: cover;
+  object-fit: contain;
   height: 20rem;
   width: 100%;
   pointer-events: none;

@@ -1,0 +1,22 @@
+.Movimiento-Carousel-Wrapper {
+  position: relative;
+}
+
+.Movimiento-Carousel-Inner {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+.Movimiento-Card-Wrapper {
+  transition: transform 0.3s ease;
+  border-radius: 1rem;
+}
+
+.Movimiento-Card-Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+}

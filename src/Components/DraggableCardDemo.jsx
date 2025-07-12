@@ -1,15 +1,24 @@
 import React from "react";
-import { DraggableCardBody, DraggableCardContainer } from "../Components/DraggableCardContainer";
+import {
+  DraggableCardBody,
+  DraggableCardContainer,
+} from "../Components/DraggableCardContainer";
 import "../Style/DraggableCard.css";
 
+// Imágenes locales
+import tylerImg from "../assets/adidas.png";
+import narratorImg from "../assets/nike.png";
+import icelandImg from "../assets/puma.png";
+import japanImg from "../assets/umbro.png";
+
 const items = [
-  { title: "Tyler Durden", image: "https://images.unsplash.com/photo-1732310216648-603c0255c000", className: "card1" },
-  { title: "The Narrator", image: "https://images.unsplash.com/photo-1697909623564-3dae17f6c20b", className: "card2" },
-  { title: "Iceland", image: "https://images.unsplash.com/photo-1501854140801-50d01698950b", className: "card3" },
-  { title: "Japan", image: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f", className: "card4" },
+  { title: "Tyler Durden", image: tylerImg, className: "card1" },
+  { title: "The Narrator", image: narratorImg, className: "card2" },
+  { title: "Iceland", image: icelandImg, className: "card3" },
+  { title: "Japan", image: japanImg, className: "card4" },
 ];
 
-const rotationValues = [-50, -30, -20, 0];
+const rotationValues = [-50, -30, -20, 20];
 const translateYValues = [40, 30, 20, 10];
 const translateXValues = [-20, -10, 10, 20];
 const zIndexValues = [1, 2, 3, 4];
@@ -37,4 +46,3 @@ export default function DraggableCardDemo() {
     </DraggableCardContainer>
   );
 }
-
