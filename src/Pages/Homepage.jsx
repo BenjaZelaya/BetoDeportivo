@@ -4,11 +4,12 @@ import CuadriculaImagenes from "../Components/CuadriculaImagenes";
 import { BackgroundBeamsWithCollision } from "../Components/ui/background-beams-with-collision";
 import MovimientoCarousel from "../Components/Movimiento-Carousel";
 import '../Style/HomePage.css';
+import { div } from "framer-motion/client";
 
 const HomePage = () => {
   return (
     <>
-      <body className="conteiner">
+      <div className="conteiner">
         <div className="conteiner-homepage">
           <BackgroundBeamsWithCollision>
             <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
@@ -23,17 +24,15 @@ const HomePage = () => {
               </div>
             </h2>
           </BackgroundBeamsWithCollision>
+          <div className="mt-2">
           <CarouselHomepage />
-
-          <CuadriculaImagenes />
-
-          
-
-          <div>
-            <MovimientoCarousel />
           </div>
+          <div className="mt-4">
+          <CuadriculaImagenes />
+          </div>
+          <MovimientoCarousel />
         </div>
-      </body>
+      </div>
     </>
   );
 };

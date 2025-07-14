@@ -53,13 +53,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // POST para crear producto con imagen
 app.post('/api/productos', upload.single('imagen'), (req, res) => {
-  const { nombre, descripcion, precio, stock } = req.body;
+  const { nombre, descripcion, precio, stock, sexo, categoria } = req.body;
 
-  if (!nombre || !descripcion || !precio || !stock) {
+  if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !req.file) {
     return res.status(400).json({ message: 'Todos los campos son obligatorios' });
   }
 
-  const imagenUrl = req.file ? `/uploads/${req.file.filename}` : '';
+  const imagenUrl = `/uploads/${req.file.filename}`;
 
   const nuevoProducto = {
     id: idCounter++,
@@ -67,6 +67,8 @@ app.post('/api/productos', upload.single('imagen'), (req, res) => {
     descripcion,
     precio: parseFloat(precio),
     stock: parseInt(stock),
+    sexo,
+    categoria,
     imagenUrl
   };
 
@@ -76,8 +78,43 @@ app.post('/api/productos', upload.single('imagen'), (req, res) => {
   res.status(201).json(nuevoProducto);
 });
 
+
 app.get('/api/productos', (req, res) => {
   res.json(productos);
+});
+// Buscar productos por nombre
+app.get('/api/productos/buscar', (req, res) => {
+  const { q } = req.query;
+  if (!q || q.trim() === "") {
+    return res.status(400).json({ message: 'El término de búsqueda es obligatorio' });
+  }
+
+  const resultado = productos.filter(p =>
+    p.nombre.toLowerCase().includes(q.toLowerCase())
+  );
+
+  res.json(resultado);
+});
+
+app.delete('/api/productos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = productos.findIndex(p => p.id === id);
+  if (index === -1) return res.status(404).json({ message: 'Producto no encontrado' });
+
+  productos.splice(index, 1);
+  guardarProductos();
+  res.json({ message: 'Producto eliminado correctamente' });
+});
+
+
+// Buscar producto por ID
+app.get('/api/productos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const producto = productos.find(p => p.id === id);
+  if (!producto) {
+    return res.status(404).json({ message: 'Producto no encontrado' });
+  }
+  res.json(producto);
 });
 
 const PORT = 5000;

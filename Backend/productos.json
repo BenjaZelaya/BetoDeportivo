@@ -1,26 +1,138 @@
 [
   {
     "id": 1,
-    "nombre": "Nike Air Force 1 '07",
-    "descripcion": "ESTILO LEGENDARIO Y REFINADO.\n\nEl fulgor vive en el Nike Air Force 1 ’07, el OG de básquetbol que le da un toque fresco a lo que mejor conoces: revestimientos con costuras duraderas, acabados impecables y la cantidad perfecta de destellos para que brilles.\nBeneficios\n•Los revestimientos cosidos en la parte superior añaden un estilo de herencia con durabilidad y...",
-    "precio": 199.999,
-    "stock": 4,
-    "imagenUrl": "./uploads/1752361033720.jpg"
-  },
-  {
-    "id": 2,
-    "nombre": "Air Jordan 1 Low",
-    "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
-    "precio": 199.999,
-    "stock": 4,
-    "imagenUrl": "/uploads/1752361033720.jpg"
-  },
-  {
-    "id": 3,
     "nombre": "Nike Air Force 1 '07 (White)",
     "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
     "precio": 199.999,
     "stock": 4,
     "imagenUrl": "/uploads/1752361033720.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Air Jordan 1 Mid",
+    "descripcion": "Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
+    "precio": 229.999,
+    "stock": 2,
+    "imagenUrl": "/uploads/1752451161966.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Chelsea FC local 2025/26 Match",
+    "descripcion": "Rinde homenaje a la historia del club y al animado espíritu londinense en constante evolución con la primera equipación del Chelsea FC 2025/26. Esta camiseta Authentic cuenta con el clásico color azul del Chelsea y un sutil estampado inspirado en la arquitectura de la ciudad.",
+    "precio": 179.999,
+    "stock": 22,
+    "sexo": "Hombre",
+    "categoria": "Ropa",
+    "imagenUrl": "/uploads/1752455640122.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Nike Winflo 10",
+    "descripcion": "Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana. El calzado de soporte neutro con Nike Air elástico y más espacio en el antepié brinda una sensación cómoda y amortiguada. Está listo para tu carrera, cuando sientas el llamado de la carretera.",
+    "precio": 113.999,
+    "stock": 10,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531542956.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Nike Dunk Low Retro",
+    "descripcion": "Los \"Be True To Your School\" Pack, que reconocen las raíces de los Dunk como las zapatillas principales del equipo universitario, se inspiran en la campaña publicitaria original. Los colores representan las universidades más importantes y el cuero impecable tiene la cantidad perfecta de brillo que los hacen ganadores. Así que amárrate los cordoness y luce ese espíritu universitario. ¿Te apuntas?",
+    "precio": 139.999,
+    "stock": 4,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531646661.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Nike Air Max 90 Drift",
+    "descripcion": "Los Air Max 90 Drift añaden una opción más duradera a tu colección de zapatillas. Su diseño con bloques de color acentúa las diferentes texturas y capas, incluyendo la tela ripstop resistente y la goma en combinación con cuero auténtico y sintético. Además, la amortiguación Max Air y la suela exterior tipo waffle ofrecen comodidad tanto para la calle como para la naturaleza.",
+    "precio": 279.999,
+    "stock": 3,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531771843.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Nike Mercurial Vapor 16 Club",
+    "descripcion": "Ya sea que estés empezando o juegues para divertirte, los tapones Club te llevan a la cancha sin comprometer la calidad. Los Vapor 16 están diseñados pensando en la velocidad. ¿Combinar velocidad con toque dla pelota y comodidad? Llegó la hora del gol.",
+    "precio": 109.999,
+    "stock": 6,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531968998.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Nike Tiempo Legend 10 Club",
+    "descripcion": "Incluso las leyendas encuentran la manera de evolucionar. Si apenas empezás o solo jugás para divertirte, la versión más reciente de este botín de fútbol Club te lleva a la cancha sin comprometer la calidad. El cuero sintético se adapta al pie y no se estira de más, así ofrece un mejor control. Más ligero y elegante que cualquier otro Tiempo hasta la fecha, el Legend 10 es para cualquier posición en el campo, ya sea que des un pase milimétrico a través de la defensa o regreses para detener una escapada.",
+    "precio": 109.999,
+    "stock": 7,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752532031404.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Nike Tiempo Legend 10 Academy",
+    "descripcion": "Incluso las leyendas encuentran la manera de evolucionar. La última versión de este calzado Academy, diseñada para llevar tu juego al siguiente nivel, cuenta con el nuevo cuero con diseño avanzado FlyTouch Lite. Más suave que el cuero natural, se adapta a tu pie y no se estira demasiado, para que puedas marcar el ritmo de tu juego. Más ligero y elegante que cualquier otro Tiempo hasta la fecha, el Legend 10 es para cualquier posición en el campo, ya sea que estés enviando un pase milimétrico a través de la defensa o mientras regresas para detener una escapada. Esta versión cuenta con tracción Anti-Clog en la suela para impedir que el barro se adhiera.",
+    "precio": 169.999,
+    "stock": 8,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752532077714.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Nike Phantom GX 2 Club",
+    "descripcion": "Ya sea que estés empezando o juegues para divertirte, los tapones Club te llevan a la cancha sin comprometer la calidad. Confeccionados con los goles en mente, los Phantom GX 2 Club tienen una textura adherente que cubre el área de impacto de los tapones y, además, cuentan con una tracción confiable para ayudar a guiar tu agilidad sin precedentes.",
+    "precio": 109.999,
+    "stock": 3,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752532139917.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Nike Streetgato",
+    "descripcion": "Domina las calles con los Nike Streetgato. Combina detalles de diseño de rendimiento con un estilo de moda urbana para que puedas jugar en cualquier momento.",
+    "precio": 169.999,
+    "stock": 5,
+    "sexo": "Hombre",
+    "categoria": "Comprar por Deporte",
+    "imagenUrl": "/uploads/1752532222131.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Nike Lunargato II",
+    "descripcion": "Los Nike Lunargato II son ideales para jugar fútbol rápido. La suavidad del cuero en el antepié produce una sensación agradable y natural para realizar toques precisos. La amortiguación en la entresuela se siente elástica y responsiva, y la suela de goma te brinda tracción para realizar cortes rápidos en superficies interiores.",
+    "precio": 219.999,
+    "stock": 3,
+    "sexo": "Hombre",
+    "categoria": "Comprar por Deporte",
+    "imagenUrl": "/uploads/1752532311389.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Camiseta Titular River Plate 25/26 (Versión Jugador)",
+    "descripcion": "Camiseta de River Plate lista para el terreno de juego que celebra un hito importante.\r\nSe cumple una década desde que River Plate se coronó campeón de Sudamérica en 2015. Esta camiseta titular auténtica de adidas se inspira en la camiseta que el equipo vistió durante esa memorable temporada. Las 3 Tiras horizontales envuelven las mangas, mientras que el famoso fajín destaca en la parte delantera y trasera. Su construcción ultramoderna, centrada en el rendimiento, mantendrá al equipo de hoy jugando un fútbol brillante.",
+    "precio": 199.999,
+    "stock": 140,
+    "sexo": "Hombre",
+    "categoria": "Ropa",
+    "imagenUrl": "/uploads/1752532489449.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": " Camiseta Alternativa River Plate 25/26 (Hombre)",
+    "descripcion": "Una camiseta de hincha creada para llevar a River Plate a nuevas alturas.\r\nCelebrá un momento emblemático de la rica historia de River Plate con esta camiseta alternativa adidas. Tomando prestadas sus rayas rojas y negras del famoso globo aerostático que aterrizó en el campo durante la celebración del título del club en 1975, seguro que te despierta la nostalgia de un pasado glorioso. La tecnología AEROREADY, que controla la humedad, te mantiene cómodo y el escudo tejido realza tu orgullo futbolero.",
+    "precio": 109.999,
+    "stock": 200,
+    "sexo": "Hombre",
+    "categoria": "Ropa",
+    "imagenUrl": "/uploads/1752532543854.jpg"
   }
 ]

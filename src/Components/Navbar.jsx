@@ -1,121 +1,134 @@
-import React from 'react'
-import '../Style/Navbar.css'
-import { div } from 'framer-motion/client';
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../assets/Logo.mp4';
 
 const Navbar = () => {
-    const navLinks = [
-        { name: 'Destacados', path: '/Tienda' },
-        { name: 'Hombre', path: '/' },
-        { name: 'Mujer', path: '/' },
-        { name: 'Niño/a', path: '/Admin' },
-        { name: 'Accesorios', path: '/' },
-        { name: 'Oportunidades', path: '/' },
-    ];
+  const navLinks = [
+    { name: 'Destacados', path: '/Tienda' },
+    { name: 'Hombre', path: '/Tienda' },
+    { name: 'Mujer', path: '/Tienda' },
+    { name: 'Niño/a', path: '/Tienda' },
+    { name: 'Accesorios', path: '/Admin' },
+    { name: 'Oportunidades', path: '/Tienda' },
+  ];
 
-    const ref = React.useRef(null);
-    const [isScrolled, setIsScrolled] = React.useState(false);
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const ref = useRef(null);
+  const navigate = useNavigate();
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(ref.current.scrollTop > 10);
-        };
-        ref.current.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(ref.current?.scrollTop > 10);
+    };
+    ref.current?.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <div className='Navbar-Container'>
-            <div ref={ref} className="h-25 md:h-64">
-                <nav className={`Navbar-Main bg-black fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-black/80 shadow-md backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    navigate(`/Tienda?q=${encodeURIComponent(searchQuery.trim())}`);
+    setIsSearchVisible(false);
+    setSearchQuery('');
+  };
 
-                    {/* Video Logo */}
-                    <a href="/" className="Navbar-Logo h-20 flex items-center gap-2">
-                        <video
-                            src={Logo}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="Navbar-LogoVideo h-14 w-auto object-contain"
-                        />
-                    </a>
+  return (
+    <div className="Navbar-Container">
+      <div ref={ref} className="h-25 md:h-64">
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 bg-black ${
+          isScrolled ? "bg-black/80 shadow-md backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"
+        }`}>
+          
+          {/* Logo */}
+          <a href="/" className="h-20 flex items-center gap-2">
+            <video src={Logo} autoPlay loop muted playsInline className="h-14 w-auto object-contain" />
+          </a>
 
-                    {/* Desktop Nav */}
-                    <div className="Navbar-Links hidden md:flex items-center gap-4 lg:gap-8">
-                        {navLinks.map((link, i) => (
-                            <a
-                                key={i}
-                                href={link.path}
-                                className={`Navbar-Link group flex flex-col gap-0.5 no-underline ${isScrolled ? "text-gray-300" : "text-white"}`}>
-                                <span className="Navbar-Text">{link.name}</span>
-                                <div className={`Navbar-Underline ${isScrolled ? "bg-gray-300" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
-                            </a>
-                        ))}
-                    </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-10">
+            {navLinks.map((link, i) => (
+              <a
+                key={i}
+                href={link.path}
+                className={`group relative flex flex-col items-center no-underline transition-colors duration-300 ${
+                  isScrolled ? "text-gray-300" : "text-white"
+                }`}
+              >
+                <span>{link.name}</span>
+                <span className="absolute -bottom-1 left-0 h-0.5 bg-current transition-all duration-300 ease-in-out w-0 group-hover:w-full" />
+              </a>
+            ))}
+          </div>
 
-                    {/* Desktop Right */}
-                    <div className="Navbar-Right hidden md:flex items-center gap-4">
-                        <svg className={`Navbar-Icon h-6 w-6 text-white transition-all duration-500 ${isScrolled ? "invert" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                        <button className={`Navbar-Button px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
-                            Login
-                        </button>
-                    </div>
+          {/* Search & Login */}
+          <div className="hidden md:flex items-center gap-4">
+            <button onClick={() => setIsSearchVisible(!isSearchVisible)}>
+              <svg className={`h-6 w-6 ${isScrolled ? "text-white" : "text-white"}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button className="bg-white text-black px-6 py-2 rounded-full">Login</button>
+          </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="Navbar-MobileBtn flex items-center gap-3 md:hidden">
-                        <svg onClick={() => setIsMenuOpen(!isMenuOpen)} className="Navbar-Hamburger h-6 w-6 cursor-pointer text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <line x1="4" y1="6" x2="20" y2="6" />
-                            <line x1="4" y1="12" x2="20" y2="12" />
-                            <line x1="4" y1="18" x2="20" y2="18" />
-                        </svg>
-                    </div>
+          {/* Search Input */}
+          {isSearchVisible && (
+            <form onSubmit={handleSearchSubmit} className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-black px-4 py-2 rounded-md shadow-lg w-72">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar producto..."
+                className="w-full p-2 rounded text-black"
+              />
+            </form>
+          )}
 
-                    {/* Mobile Menu */}
-                    <div className={`Navbar-MobileMenu fixed top-0 left-0 w-full h-screen bg-black text-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium transition-all duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-                        {/* Logo en el menú móvil */}
-                        <div className="Navbar-MobileLogo absolute top-6">
-                            <video
-                                src={Logo}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="Navbar-LogoVideo h-14 w-auto object-contain"
-                            />
-                        </div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-3">
+            <svg onClick={() => setIsMenuOpen(!isMenuOpen)} className="h-6 w-6 cursor-pointer text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
+            </svg>
+          </div>
+        </nav>
 
-                        <button className="Navbar-CloseBtn absolute top-4 right-4" onClick={() => setIsMenuOpen(false)}>
-                            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <line x1="18" y1="6" x2="6" y2="18" />
-                                <line x1="6" y1="6" x2="18" y2="18" />
-                            </svg>
-                        </button>
+        {/* Mobile Menu */}
+        <div className={`fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col md:hidden items-center overflow-y-auto pt-24 px-4 transition duration-300 z-50 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+          <div className="absolute top-4 right-4">
+            <svg onClick={() => setIsMenuOpen(false)} className="h-6 w-6 text-white cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </div>
 
-                        <div className="flex flex-col gap-6 mt-24">
-                            {navLinks.map((link, i) => (
-                                <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)} className="Navbar-MobileLink no-underline text-white text-lg">
-                                    {link.name}
-                                </a>
-                            ))}
+          <video src={Logo} autoPlay loop muted playsInline className="h-16 mb-6" />
 
-                            <button className="Navbar-NewLaunch border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all border-white text-white">
-                                New Launch
-                            </button>
+          {navLinks.map((link, i) => (
+            <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)} className="text-white text-lg no-underline my-2">
+              {link.name}
+            </a>
+          ))}
 
-                            <button className="Navbar-Button bg-white text-black px-8 py-2.5 rounded-full transition-all duration-500">
-                                Login
-                            </button>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+          <form onSubmit={handleSearchSubmit} className="w-full px-4 mt-4">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Buscar producto..."
+              className="w-full p-2 rounded text-black"
+            />
+          </form>
+
+          <button className="mt-6 bg-white text-black px-6 py-2 rounded-full">Login</button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
