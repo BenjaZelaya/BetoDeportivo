@@ -5,7 +5,13 @@
     "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
     "precio": 199.999,
     "stock": 4,
-    "imagenUrl": "/uploads/1752361033720.jpg"
+    "imagenUrl": "/uploads/1752361033720.jpg",
+    "categoria": "Calzado",
+    "sexo": "Hombre",
+    "imagenes": [
+      "/uploads/1752609120260.jpg"
+    ],
+    "portada": "/uploads/1752609120260.jpg"
   },
   {
     "id": 2,
@@ -13,7 +19,13 @@
     "descripcion": "Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
     "precio": 229.999,
     "stock": 2,
-    "imagenUrl": "/uploads/1752451161966.jpg"
+    "imagenUrl": "/uploads/1752451161966.jpg",
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenes": [
+      "/uploads/1752609170486.jpg"
+    ],
+    "portada": "/uploads/1752609170486.jpg"
   },
   {
     "id": 3,
@@ -23,7 +35,11 @@
     "stock": 22,
     "sexo": "Hombre",
     "categoria": "Ropa",
-    "imagenUrl": "/uploads/1752455640122.jpg"
+    "imagenUrl": "/uploads/1752455640122.jpg",
+    "imagenes": [
+      "/uploads/1752609187283.jpg"
+    ],
+    "portada": "/uploads/1752609187283.jpg"
   },
   {
     "id": 4,
@@ -32,8 +48,12 @@
     "precio": 113.999,
     "stock": 10,
     "sexo": "Hombre",
-    "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752531542956.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752531542956.jpg",
+    "imagenes": [
+      "/uploads/1752609403554.jpg"
+    ],
+    "portada": "/uploads/1752609403554.jpg"
   },
   {
     "id": 5,
@@ -43,7 +63,11 @@
     "stock": 4,
     "sexo": "Hombre",
     "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752531646661.jpg"
+    "imagenUrl": "/uploads/1752531646661.jpg",
+    "imagenes": [
+      "/uploads/1752609279486.jpg"
+    ],
+    "portada": "/uploads/1752609279486.jpg"
   },
   {
     "id": 6,
@@ -53,7 +77,11 @@
     "stock": 3,
     "sexo": "Hombre",
     "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752531771843.jpg"
+    "imagenUrl": "/uploads/1752531771843.jpg",
+    "imagenes": [
+      "/uploads/1752609222700.jpg"
+    ],
+    "portada": "/uploads/1752609222700.jpg"
   },
   {
     "id": 7,
@@ -62,8 +90,12 @@
     "precio": 109.999,
     "stock": 6,
     "sexo": "Hombre",
-    "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752531968998.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752531968998.jpg",
+    "imagenes": [
+      "/uploads/1752609237861.jpg"
+    ],
+    "portada": "/uploads/1752609237861.jpg"
   },
   {
     "id": 8,
@@ -72,8 +104,12 @@
     "precio": 109.999,
     "stock": 7,
     "sexo": "Hombre",
-    "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752532031404.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752532031404.jpg",
+    "imagenes": [
+      "/uploads/1752609254566.jpg"
+    ],
+    "portada": "/uploads/1752609254566.jpg"
   },
   {
     "id": 9,
@@ -82,8 +118,12 @@
     "precio": 169.999,
     "stock": 8,
     "sexo": "Hombre",
-    "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752532077714.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752532077714.jpg",
+    "imagenes": [
+      "/uploads/1752609298983.jpg"
+    ],
+    "portada": "/uploads/1752609298983.jpg"
   },
   {
     "id": 10,
@@ -92,8 +132,12 @@
     "precio": 109.999,
     "stock": 3,
     "sexo": "Hombre",
-    "categoria": "Calzado",
-    "imagenUrl": "/uploads/1752532139917.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752532139917.jpg",
+    "imagenes": [
+      "/uploads/1752609321399.jpg"
+    ],
+    "portada": "/uploads/1752609321399.jpg"
   },
   {
     "id": 11,
@@ -102,8 +146,12 @@
     "precio": 169.999,
     "stock": 5,
     "sexo": "Hombre",
-    "categoria": "Comprar por Deporte",
-    "imagenUrl": "/uploads/1752532222131.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752532222131.jpg",
+    "imagenes": [
+      "/uploads/1752609386121.jpg"
+    ],
+    "portada": "/uploads/1752609386121.jpg"
   },
   {
     "id": 12,
@@ -112,8 +160,12 @@
     "precio": 219.999,
     "stock": 3,
     "sexo": "Hombre",
-    "categoria": "Comprar por Deporte",
-    "imagenUrl": "/uploads/1752532311389.jpg"
+    "categoria": "Deporte",
+    "imagenUrl": "/uploads/1752532311389.jpg",
+    "imagenes": [
+      "/uploads/1752609371585.jpg"
+    ],
+    "portada": "/uploads/1752609371585.jpg"
   },
   {
     "id": 13,
@@ -123,7 +175,11 @@
     "stock": 140,
     "sexo": "Hombre",
     "categoria": "Ropa",
-    "imagenUrl": "/uploads/1752532489449.jpg"
+    "imagenUrl": "/uploads/1752532489449.jpg",
+    "imagenes": [
+      "/uploads/1752609353752.jpg"
+    ],
+    "portada": "/uploads/1752609353752.jpg"
   },
   {
     "id": 14,
@@ -133,6 +189,37 @@
     "stock": 200,
     "sexo": "Hombre",
     "categoria": "Ropa",
-    "imagenUrl": "/uploads/1752532543854.jpg"
+    "imagenUrl": "/uploads/1752532543854.jpg",
+    "imagenes": [
+      "/uploads/1752609346135.jpg"
+    ],
+    "portada": "/uploads/1752609346135.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Zapatillas Campus 00s X Minecraft (Niños)",
+    "descripcion": "Tanto para explorar el barrio o simplemente el patio trasero, estas zapatillas para niños de adidas están hechas para la aventura. Al igual que en Minecraft, donde creás tu propio mundo bloque a bloque, estas zapatillas dejan volar la imaginación de los niños. Presentan colores y detalles de Creeper para que los niños se sientan parte de la acción. Los cordones elásticos hacen que sean fáciles de poner y sacar sin tener que atar los cordones.",
+    "precio": 119.999,
+    "stock": 8,
+    "sexo": "Niño",
+    "categoria": "Calzado",
+    "imagenes": [
+      "/uploads/1752607995907.jpg"
+    ],
+    "portada": "/uploads/1752607995907.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Zapatilla Superstar",
+    "descripcion": "Vuelven las emblemáticas zapatillas adidas Superstar. Pisá fuerte con 50 años de estilo deportivo y urbano con estas zapatillas bajas. El exterior de cuero liso y la puntera de caucho evocan recuerdos de las canchas de básquet y las calles de la ciudad. La lengüeta y el cuello acolchados añaden comodidad para usarlas todo el día, mientras que la suela de caucho texturizada te da un agarre increíble. Tanto si vas a tirar al aro de básquet como a salir por la ciudad, las zapatillas Superstar de adidas tienen la versatilidad y el atractivo retro necesarios para llevarte hasta ahí con un estilo clásico.",
+    "precio": 179.999,
+    "stock": 8,
+    "sexo": "Mujer",
+    "categoria": "Calzado",
+    "imagenes": [
+      "/uploads/1752608473555.jpg",
+      "/uploads/1752608473556.jpg"
+    ],
+    "portada": "/uploads/1752608473555.jpg"
   }
 ]

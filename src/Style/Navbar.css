@@ -1,3 +1,7 @@
+.Navbar-container{
+  z-index: 1;
+}
+
 .Navbar-LogoVideo {
   max-height: 56px;
   transition: all 0.3s ease;

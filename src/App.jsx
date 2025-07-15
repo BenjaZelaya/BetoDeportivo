@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
 import HomePage from './Pages/Homepage';
 import Background from './Pages/Background';
 import Tienda from './Pages/Tienda';
 import Admin from './Pages/Admin';
 import CarouselSuperior from './Components/CarouselSuperior';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Tienda" element={<Tienda />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
+      <Footer/> 
     </>
   );
 }

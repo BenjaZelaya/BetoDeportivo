@@ -11,7 +11,8 @@ const CrearProducto = () => {
     sexo: '',
     categoria: ''
   });
-  const [imagen, setImagen] = useState(null); // NUEVO
+  const [imagenes, setImagenes] = useState([]);
+  const [portadaIndex, setPortadaIndex] = useState(null);
   const [mensaje, setMensaje] = useState('');
   const [error, setError] = useState('');
 
@@ -19,8 +20,22 @@ const CrearProducto = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleImagenChange = (e) => {
-    setImagen(e.target.files[0]);
+  const handleImagenesChange = (e) => {
+    const nuevas = Array.from(e.target.files).slice(0, 5 - imagenes.length);
+    setImagenes(prev => [...prev, ...nuevas]);
+  };
+
+  const eliminarImagen = (index) => {
+    const nuevas = [...imagenes];
+    nuevas.splice(index, 1);
+    setImagenes(nuevas);
+
+    if (portadaIndex === index) setPortadaIndex(null);
+    else if (portadaIndex > index) setPortadaIndex(portadaIndex - 1);
+  };
+
+  const seleccionarPortada = (index) => {
+    setPortadaIndex(index);
   };
 
   const handleSubmit = async (e) => {
@@ -30,29 +45,31 @@ const CrearProducto = () => {
 
     const { nombre, descripcion, precio, stock, sexo, categoria } = form;
 
-    if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !imagen) {
-      setError('❌ Todos los campos (incluida la imagen) son obligatorios');
+    if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || imagenes.length === 0 || portadaIndex === null) {
+      setError('❌ Todos los campos (incluidas imágenes y portada) son obligatorios');
       return;
     }
 
     const data = new FormData();
     Object.entries(form).forEach(([key, value]) => data.append(key, value));
-    data.append('imagen', imagen); // AÑADIR IMAGEN
+    imagenes.forEach(img => data.append('imagenes', img));
+    data.append('portadaIndex', portadaIndex);
 
     try {
       await axios.post('http://localhost:5000/api/productos', data);
       setMensaje('✅ Producto creado con éxito');
       setForm({ nombre: '', descripcion: '', precio: '', stock: '', sexo: '', categoria: '' });
-      setImagen(null);
+      setImagenes([]);
+      setPortadaIndex(null);
     } catch (error) {
       setError('❌ Error al conectar con el servidor');
     }
   };
 
   return (
-    <div className="CrearProducto-container">
-      <h2 className="CrearProducto-titulo">Crear Producto</h2>
-      <form onSubmit={handleSubmit} className="CrearProducto-form" encType="multipart/form-data">
+    <div className="crear-container">
+      <h2 className="crear-titulo">Crear Producto</h2>
+      <form onSubmit={handleSubmit} className="crear-form">
         <input type="text" name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange} required />
         <textarea name="descripcion" placeholder="Descripción" value={form.descripcion} onChange={handleChange} required />
         <input type="number" name="precio" placeholder="Precio" value={form.precio} onChange={handleChange} required />
@@ -69,15 +86,32 @@ const CrearProducto = () => {
           <option value="">Seleccione categoría</option>
           <option value="Ropa">Ropa</option>
           <option value="Calzado">Calzado</option>
-          <option value="Comprar por Deporte">Comprar por Deporte</option>
+          <option value="Deportes">Comprar por Deporte</option>
         </select>
 
-        <input type="file" name="imagen" onChange={handleImagenChange} accept="image/*" required />
+        <input type="file" onChange={handleImagenesChange} accept="image/*" multiple />
 
-        <button type="submit" className="CrearProducto-button">Crear Producto</button>
+        <div className="vista-previa">
+          {imagenes.map((img, i) => (
+            <div key={i} className="preview-item">
+              <img src={URL.createObjectURL(img)} alt={`preview-${i}`} />
+              <div className="preview-actions">
+                <button type="button" onClick={() => eliminarImagen(i)} className="btn-eliminar">❌</button>
+                <button
+                  type="button"
+                  onClick={() => seleccionarPortada(i)}
+                  className={`btn-portada ${portadaIndex === i ? 'seleccionada' : ''}`}
+                  title="Marcar como portada"
+                >⭐</button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button type="submit" className="crear-btn">Crear Producto</button>
       </form>
-      {mensaje && <p className="CrearProducto-mensaje">{mensaje}</p>}
-      {error && <p className="CrearProducto-error">{error}</p>}
+      {mensaje && <p className="crear-mensaje">{mensaje}</p>}
+      {error && <p className="crear-error">{error}</p>}
     </div>
   );
 };
