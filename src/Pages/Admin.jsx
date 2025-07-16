@@ -1,7 +1,7 @@
 import { h1 } from 'framer-motion/client'
 import React from 'react'
 import CrearProducto from '../Components/Admin/CrearProducto'
-import Admintabla from '../Components/Admin/Admintabla'
+import Admintabla from '../Components/Admin/AdminTabla'
 
 
 const Admin = () => {
