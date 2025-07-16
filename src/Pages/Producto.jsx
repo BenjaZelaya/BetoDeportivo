@@ -1,0 +1,61 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+const Producto = () => {
+  const { id } = useParams();
+  const [producto, setProducto] = useState(null);
+  const [imagenPrincipal, setImagenPrincipal] = useState('');
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/productos/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        setProducto(data);
+        setImagenPrincipal(`http://localhost:5000${data.portada || data.imagenes?.[0]}`);
+      })
+      .catch(err => console.error('Error al cargar producto:', err));
+  }, [id]);
+
+  if (!producto) {
+    return <div className="p-10 text-center text-lg">Cargando producto...</div>;
+  }
+
+  return (
+    <div className="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Izquierda: Galería */}
+      <div className="flex flex-col items-start">
+        <img
+          src={imagenPrincipal}
+          alt="imagen principal"
+          className="w-full h-96 object-cover rounded border shadow mb-4"
+        />
+
+        {/* Miniaturas */}
+        <div className="flex gap-2">
+          {producto.imagenes?.map((img, i) => (
+            <img
+              key={i}
+              src={`http://localhost:5000${img}`}
+              alt={`miniatura-${i}`}
+              className={`w-20 h-20 object-cover border rounded cursor-pointer ${imagenPrincipal.endsWith(img) ? 'ring-2 ring-black' : ''}`}
+              onClick={() => setImagenPrincipal(`http://localhost:5000${img}`)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Derecha: Info */}
+      <div className="flex flex-col gap-4">
+        <h1 className="text-3xl font-bold">{producto.nombre}</h1>
+        <p className="text-gray-500">{producto.categoria} • {producto.sexo}</p>
+        <p className="text-2xl font-semibold text-black">${producto.precio}</p>
+        <p className="text-md text-gray-700">{producto.descripcion}</p>
+        <button className="mt-4 w-fit px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition">
+          Añadir al carrito
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Producto;

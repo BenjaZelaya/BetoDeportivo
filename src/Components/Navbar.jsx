@@ -44,7 +44,7 @@ const Navbar = () => {
         }`}>
           {/* Logo */}
           <Link to="/" className="h-20 flex items-center gap-2">
-            <video src={Logo} autoPlay loop muted playsInline className="h-14 w-auto object-contain" />
+            <video src={Logo} autoPlay loop muted playsInline className="h-20 w-40 object-contain" />
           </Link>
 
           {/* Desktop Nav */}

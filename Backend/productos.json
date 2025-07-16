@@ -221,5 +221,22 @@
       "/uploads/1752608473556.jpg"
     ],
     "portada": "/uploads/1752608473555.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Botines sin cordones F50 Elite de terreno firme",
+    "title": "Botines sin cordones F50 Elite de terreno firme",
+    "descripcion": "Encontrá tu rapidez para expresarte de verdad en el campo. Sentí la adrenalina con los botines adidas F50, diseñados para la velocidad. Botines de fútbol Elite sin cordones con empeine Fibertouch fino, cuello adidas PRIMEKNIT para sujeción óptima y textura Sprintweb 3D para ayudar a mantener la pelota cerca. La suela Sprintframe 360, diseñada para campos de césped sintético, soporta un ritmo implacable.",
+    "precio": 399.999,
+    "stock": 30,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenes": [
+      "/uploads/1752692433465.jpg",
+      "/uploads/1752692433466.jpg",
+      "/uploads/1752692433469.jpg",
+      "/uploads/1752692433470.jpg"
+    ],
+    "portada": "/uploads/1752692433465.jpg"
   }
 ]

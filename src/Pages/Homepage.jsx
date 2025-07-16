@@ -3,6 +3,7 @@ import CarouselHomepage from "../Components/CarouselHomepage";
 import CuadriculaImagenes from "../Components/CuadriculaImagenes";
 import { BackgroundBeamsWithCollision } from "../Components/ui/background-beams-with-collision";
 import MovimientoCarousel from "../Components/Movimiento-Carousel";
+import NuevosProductos from "../Components/Homepage/NuevosProductos";
 import '../Style/HomePage.css';
 import { div } from "framer-motion/client";
 
@@ -25,12 +26,27 @@ const HomePage = () => {
             </h2>
           </BackgroundBeamsWithCollision>
           <div className="mt-2">
-          <CarouselHomepage />
+            <CarouselHomepage />
           </div>
           <div className="mt-4">
-          <CuadriculaImagenes />
+            <CuadriculaImagenes />
           </div>
-          <MovimientoCarousel />
+          <div className="mt-4">
+            <div className="mx-4">
+              <h3>Nuestros Clásicos</h3>
+            </div>
+            <div>
+              <MovimientoCarousel />
+            </div>
+          </div>
+          <div className="mt-4">
+            <div className="mx-4">
+              <h3>Nuevos Productos</h3>
+            </div>
+            <div>
+              <NuevosProductos />
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import '../Style/Tienda.css';
 
 const Tienda = () => {
@@ -70,10 +70,7 @@ const Tienda = () => {
   return (
     <>
       {/* Filtro lateral */}
-      <div
-        className={`tienda-filtros fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-40 transform transition-transform duration-300 ${isFiltroOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-      >
+      <div className={`tienda-filtros fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-40 transform transition-transform duration-300 ${isFiltroOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-lg font-bold">Filtrar productos</h2>
           <button onClick={() => setIsFiltroOpen(false)} className="text-gray-600 hover:text-black text-xl">&times;</button>
@@ -112,7 +109,7 @@ const Tienda = () => {
         </div>
       </div>
 
-      {/* Fondo oscurecido cuando panel abierto */}
+      {/* Fondo oscuro cuando el panel está abierto */}
       {isFiltroOpen && (
         <div
           className="fixed inset-0 bg-black/40 z-30"
@@ -142,9 +139,10 @@ const Tienda = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {productosFiltrados.map(p => (
-              <div
+              <Link
                 key={p.id}
-                className="border border-gray-200 p-4 rounded-lg bg-white shadow hover:shadow-md transition"
+                to={`/producto/${p.id}`}
+                className="border border-gray-200 hover:border-black p-4 rounded-lg bg-white shadow hover:shadow-md transition-all cursor-pointer no-underline text-black hover:text-black"
               >
                 <img
                   src={
@@ -153,11 +151,12 @@ const Tienda = () => {
                       : 'http://localhost:5000/uploads/default.png'
                   }
                   alt={p.nombre}
-                  className="w-full h-30 object-cover rounded mb-3"
+                  className="w-full h-30 object-cover rounded mb-3 transition-transform duration-300 hover:scale-105"
                 />
-                <p className="text-black font-bold">${p.precio}</p>
+                <p className="font-bold">${p.precio}</p>
                 <h3 className="text-lg font-semibold">{p.nombre}</h3>
-              </div>
+              </Link>
+
             ))}
           </div>
         )}

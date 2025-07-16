@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/Homepage';
 import Background from './Pages/Background';
 import Tienda from './Pages/Tienda';
+import Producto from './Pages/Producto';
 import Admin from './Pages/Admin';
 import CarouselSuperior from './Components/CarouselSuperior';
 import Navbar from './Components/Navbar';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Background" element={<Background />} />
         <Route path="/Tienda" element={<Tienda />} />
+        <Route path="/producto/:id" element={<Producto />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
       <Footer/> 
