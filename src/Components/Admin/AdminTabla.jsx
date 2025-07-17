@@ -69,6 +69,7 @@ const AdminTabla = () => {
             <th>Stock</th>
             <th>Sexo</th>
             <th>Categoría</th>
+            <th>Color</th>
             <th>Imágenes</th>
             <th>Acciones</th>
           </tr>
@@ -82,6 +83,7 @@ const AdminTabla = () => {
               <td>{p.stock}</td>
               <td>{p.sexo}</td>
               <td>{p.categoria}</td>
+              <td>{p.color}</td>
               <td>
                 {(p.imagenes || []).map((img, i) => (
                   <img key={i} src={`http://localhost:5000${img}`} alt="mini" width="50" />
@@ -115,8 +117,21 @@ const AdminTabla = () => {
             <select name="categoria" value={productoEditando.categoria} onChange={handleEditarChange}>
               <option value="Ropa">Ropa</option>
               <option value="Calzado">Calzado</option>
-              <option value="Deporte">Deporte</option>
+              <option value="Deportes">Deportes</option>
               <option value="Accesorios">Accesorios</option>
+            </select>
+
+            <select name="color" value={productoEditando.color} onChange={handleEditarChange}>
+              <option value="">Seleccione Color</option>
+              <option value="Amarillo">Amarillo</option>
+              <option value="Azul">Azul</option>
+              <option value="Rojo">Rojo</option>
+              <option value="Verde">Verde</option>
+              <option value="Negro">Negro</option>
+              <option value="Blanco">Blanco</option>
+              <option value="Gris">Gris</option>
+              <option value="Naranja">Naranja</option>
+              <option value="Rosa">Rosa</option>
             </select>
 
             <input type="file" multiple accept="image/*" onChange={handleNuevasImagenes} />

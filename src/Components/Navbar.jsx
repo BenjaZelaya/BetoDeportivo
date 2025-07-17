@@ -39,9 +39,8 @@ const Navbar = () => {
   return (
     <div className="Navbar-container">
       <div ref={ref} className="h-25 md:h-64">
-        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-40 bg-black ${
-          isScrolled ? 'bg-black/80 shadow-md backdrop-blur-lg py-3 md:py-4' : 'py-4 md:py-6'
-        }`}>
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-30 bg-black ${isScrolled ? 'bg-black/80 shadow-md backdrop-blur-lg py-3 md:py-4' : 'py-4 md:py-6'
+          }`}>
           {/* Logo */}
           <Link to="/" className="h-20 flex items-center gap-2">
             <video src={Logo} autoPlay loop muted playsInline className="h-20 w-40 object-contain" />
@@ -53,9 +52,8 @@ const Navbar = () => {
               <Link
                 key={i}
                 to={link.path}
-                className={`group relative flex flex-col items-center no-underline transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-300' : 'text-white'
-                }`}
+                className={`group relative flex flex-col items-center no-underline transition-colors duration-300 ${isScrolled ? 'text-gray-300' : 'text-white'
+                  }`}
               >
                 <span>{link.name}</span>
                 <span className="absolute -bottom-1 left-0 h-0.5 bg-current transition-all duration-300 ease-in-out w-0 group-hover:w-full" />

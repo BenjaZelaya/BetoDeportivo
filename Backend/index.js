@@ -74,9 +74,9 @@ app.get('/api/productos/:id', (req, res) => {
 
 // Crear nuevo producto
 app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
-  const { nombre, descripcion, precio, stock, sexo, categoria, portadaIndex } = req.body;
+  const { nombre, descripcion, precio, stock, sexo, categoria, color, portadaIndex } = req.body;
 
-  if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || req.files.length === 0) {
+  if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !color || req.files.length === 0) {
     return res.status(400).json({ message: 'Todos los campos son obligatorios (incluidas imágenes)' });
   }
 
@@ -90,15 +90,17 @@ app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
   const nuevoProducto = {
     id: idCounter++,
     nombre,
-    title: nombre, // útil para compatibilidad
+    title: nombre,
     descripcion,
     precio: parseFloat(precio),
     stock: parseInt(stock),
-    sexo,
-    categoria,
+    sexo: sexo.toLowerCase(),
+    categoria: categoria.toLowerCase(),
+    color: color.toLowerCase(),
     imagenes,
     portada: imagenes[indexPortada]
   };
+
 
   productos.push(nuevoProducto);
   guardarProductos();
@@ -112,15 +114,17 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   const producto = productos.find(p => p.id === id);
   if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
 
-  const { nombre, descripcion, precio, stock, sexo, categoria, portadaIndex } = req.body;
+  const { nombre, descripcion, precio, stock, sexo, categoria, color, portadaIndex } = req.body;
 
   producto.nombre = nombre || producto.nombre;
   producto.title = nombre || producto.title;
   producto.descripcion = descripcion || producto.descripcion;
   producto.precio = parseFloat(precio) || producto.precio;
   producto.stock = parseInt(stock) || producto.stock;
-  producto.sexo = sexo || producto.sexo;
-  producto.categoria = categoria || producto.categoria;
+  producto.sexo = sexo ? sexo.toLowerCase() : producto.sexo;
+  producto.categoria = categoria ? categoria.toLowerCase() : producto.categoria;
+  producto.color = color ? color.toLowerCase() : producto.color;
+
 
   if (req.files && req.files.length > 0) {
     const nuevasImagenes = req.files.map(file => `/uploads/${file.filename}`);

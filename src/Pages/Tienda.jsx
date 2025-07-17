@@ -7,7 +7,7 @@ const Tienda = () => {
   const [productosFiltrados, setProductosFiltrados] = useState([]);
   const [numProductos, setNumProductos] = useState(0);
   const [isFiltroOpen, setIsFiltroOpen] = useState(false);
-  const [filtros, setFiltros] = useState({ precio: '', categoria: '', sexo: '' });
+  const [filtros, setFiltros] = useState({ precio: '', categoria: '', sexo: '', color: '' });
 
   const location = useLocation();
 
@@ -44,12 +44,16 @@ const Tienda = () => {
   useEffect(() => {
     let filtrados = [...productos];
 
-    if (filtros.categoria) {
-      filtrados = filtrados.filter(p => p.categoria?.toLowerCase() === filtros.categoria);
-    }
-
     if (filtros.sexo) {
       filtrados = filtrados.filter(p => p.sexo?.toLowerCase() === filtros.sexo);
+    }
+
+    if (filtros.categoria) {
+      filtrados = filtrados.filter(p => p.categoria?.toLowerCase() === filtros.categoria.toLowerCase());
+    }
+
+    if (filtros.color) {
+      filtrados = filtrados.filter(p => p.color?.toLowerCase() === filtros.color.toLowerCase());
     }
 
     if (filtros.precio === 'menor') {
@@ -92,7 +96,7 @@ const Tienda = () => {
               <option value="">Todas</option>
               <option value="calzado">Calzado</option>
               <option value="ropa">Ropa</option>
-              <option value="Comprar por Deporte">Comprar por Deporte</option>
+              <option value="Deportes">Deportes</option>
               <option value="accesorios">Accesorios</option>
             </select>
           </div>
@@ -106,8 +110,28 @@ const Tienda = () => {
               <option value="niño">Niño/a</option>
             </select>
           </div>
+
+
+          <div>
+            <label className="block font-medium mb-1">Color</label>
+            <select name="color" value={filtros.color} onChange={handleFiltroChange} className="w-full border rounded px-3 py-2">
+              <option value="">Todos</option>
+              <option value="Amarillo">Amarillo</option>
+              <option value="Azul">Azul</option>
+              <option value="Rojo">Rojo</option>
+              <option value="Verde">Verde</option>
+              <option value="Negro">Negro</option>
+              <option value="Blanco">Blanco</option>
+              <option value="Gris">Gris</option>
+              <option value="Naranja">Naranja</option>
+              <option value="Rosa">Rosa</option>
+            </select>
+          </div>
+
         </div>
       </div>
+
+
 
       {/* Fondo oscuro cuando el panel está abierto */}
       {isFiltroOpen && (
@@ -155,6 +179,7 @@ const Tienda = () => {
                 />
                 <p className="font-bold">${p.precio}</p>
                 <h3 className="text-lg font-semibold">{p.nombre}</h3>
+                <p className="text-gray-400">{p.categoria}</p>
               </Link>
 
             ))}

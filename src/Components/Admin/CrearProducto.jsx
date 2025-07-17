@@ -9,7 +9,8 @@ const CrearProducto = () => {
     precio: '',
     stock: '',
     sexo: '',
-    categoria: ''
+    categoria: '',
+    color: ''
   });
   const [imagenes, setImagenes] = useState([]);
   const [portadaIndex, setPortadaIndex] = useState(null);
@@ -43,9 +44,9 @@ const CrearProducto = () => {
     setMensaje('');
     setError('');
 
-    const { nombre, descripcion, precio, stock, sexo, categoria } = form;
+    const { nombre, descripcion, precio, stock, sexo, categoria, color } = form;
 
-    if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || imagenes.length === 0 || portadaIndex === null) {
+    if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !color|| imagenes.length === 0 || portadaIndex === null) {
       setError('❌ Todos los campos (incluidas imágenes y portada) son obligatorios');
       return;
     }
@@ -58,7 +59,7 @@ const CrearProducto = () => {
     try {
       await axios.post('http://localhost:5000/api/productos', data);
       setMensaje('✅ Producto creado con éxito');
-      setForm({ nombre: '', descripcion: '', precio: '', stock: '', sexo: '', categoria: '' });
+      setForm({ nombre: '', descripcion: '', precio: '', stock: '', sexo: '', categoria: '', color: '' });
       setImagenes([]);
       setPortadaIndex(null);
     } catch (error) {
@@ -86,7 +87,20 @@ const CrearProducto = () => {
           <option value="">Seleccione categoría</option>
           <option value="Ropa">Ropa</option>
           <option value="Calzado">Calzado</option>
-          <option value="Deportes">Comprar por Deporte</option>
+          <option value="Deportes">Deportes</option>
+        </select>
+
+        <select name="color" value={form.color} onChange={handleChange} required>
+          <option value="">Seleccione Color</option>
+          <option value="Amarillo">Amarillo</option>
+          <option value="Azul">Azul</option>
+          <option value="Rojo">Rojo</option>
+          <option value="Verde">Verde</option>
+          <option value="Negro">Negro</option>
+          <option value="Blanco">Blanco</option>
+          <option value="Gris">Gris</option>
+          <option value="Naranja">Naranja</option>
+          <option value="Rosa">Rosa</option>
         </select>
 
         <input type="file" onChange={handleImagenesChange} accept="image/*" multiple />
