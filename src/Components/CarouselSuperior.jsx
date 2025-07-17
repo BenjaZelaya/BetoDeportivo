@@ -17,7 +17,7 @@ const CarouselSuperior = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white dark:bg-black py-3 text-center mt-24 z-40 shadow-md">
+    <div className="w-full bg-white dark:bg-black py-3 text-center mt-24 z-40 shadow-md border border-gray-300 dark:border-gray-600 ">
       <p className="text-black dark:text-white text-base md:text-lg font-semibold font-sans tracking-tight whitespace-pre-line">
         {messages[index].split('/').map((line, i) => (
           <span key={i} className="block">

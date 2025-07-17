@@ -11,16 +11,21 @@
     "tailwind:init": "tailwindcss init -p"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "axios": "^1.10.0",
     "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
+    "boxicons": "^2.1.4",
     "framer-motion": "^12.23.3",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-modal": "^3.16.3",
     "react-multi-carousel": "^2.8.6",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "sweetalert2": "^11.22.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

@@ -33,12 +33,12 @@ const Footer = () => {
         {/* Redes sociales */}
         <div className="flex flex-col items-center sm:items-start">
           <h3 className="text-lg font-semibold mb-1">Seguinos</h3>
-          <div className="flex gap-4 text-2xl mt-2">
+          <div className="flex gap-4 text-2xl mt-2 ">
             <a
               href="https://www.instagram.com/benjazelayaa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-pink-500 transition"
+              className="text-gray-100 hover:text-pink-500 text-decoration-none transition"
             >
               <FaInstagram />
             </a>
@@ -46,7 +46,7 @@ const Footer = () => {
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
+              className="text-gray-100 hover:text-blue-500 text-decoration-none transition"
             >
               <FaFacebook />
             </a>
@@ -54,7 +54,7 @@ const Footer = () => {
               href="https://wa.me/5491123456789"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-green-400 transition"
+              className="text-gray-100 hover:text-green-500 text-decoration-none transition"
             >
               <FaWhatsapp />
             </a>
