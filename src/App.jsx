@@ -21,12 +21,15 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Background" element={<Background />} />
-        <Route path="/Tienda" element={<Tienda />} />
+        <Route path="/tienda" element={<Tienda />} />
+        <Route path="/hombre" element={<Tienda sexoFijo="hombre" />} />
+        <Route path="/mujer" element={<Tienda sexoFijo="mujer" />} />
+        <Route path="/nino" element={<Tienda sexoFijo="niño" />} />
         <Route path="/producto/:id" element={<Producto />} />
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
-      <Footer/> 
+      <Footer />
     </>
   );
 }

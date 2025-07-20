@@ -6,12 +6,12 @@ import Logo from '../assets/Logo.mp4';
 
 const Navbar = () => {
   const navLinks = [
-    { name: 'Destacados', path: '/Tienda' },
-    { name: 'Hombre', path: '/Tienda' },
-    { name: 'Mujer', path: '/Tienda' },
-    { name: 'Niño/a', path: '/Tienda' },
-    { name: 'Accesorios', path: '/Tienda' },
-    { name: 'Oportunidades', path: '/Tienda' },
+    { name: 'Destacados', path: '/tienda' },
+    { name: 'Hombre', path: '/hombre' },
+    { name: 'Mujer', path: '/mujer' },
+    { name: 'Niño/a', path: '/nino' },
+    { name: 'Accesorios', path: '/tienda?categoria=accesorios' },
+    { name: 'Oportunidades', path: '/tienda?ofertas=true' }, // si luego quieres filtrar por promociones
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
 
           <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-auto md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-30 bg-black ${isScrolled ? 'bg-black/80 shadow-md backdrop-blur-lg py-3 md:py-4' : 'py-4 md:py-6'}`}>
             <div class="fixed top-0 left-0 w-full h-9 text-white text-center font-medium py-2 bg-gradient-to-r from-violet-500 via-[#9938CA] to-[#E0724A]">
-              <p>¡¿Que estas esperando?! <span class="underline underline-offset-2">Ofertas hoy Uraaa!</span></p>
+              <p>¡¿Que estas esperando?! <span class="underline underline-offset-2">Ofertas hoy!!!</span></p>
             </div>
             {/* Logo */}
             <Link to="/" className="h-20 flex items-center gap-2">
