@@ -8,7 +8,7 @@ const NuevosProductos = () => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch('https://betodeportivo-backend.onrender.com')
+    fetch('https://betodeportivo-backend.onrender.com/api/productos')
       .then(res => res.json())
       .then(data => {
         // ordenar por ID descendente y tomar los 6 más nuevos

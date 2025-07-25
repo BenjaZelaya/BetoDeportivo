@@ -7,7 +7,7 @@ const ProductoSimilares = ({ categoriaActual, idActual }) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch('https://betodeportivo-backend.onrender.com')
+    fetch('https://betodeportivo-backend.onrender.com/api/productos')
       .then(res => res.json())
       .then(data => {
         const similares = data.filter(p => p.categoria === categoriaActual && p.id !== idActual);
