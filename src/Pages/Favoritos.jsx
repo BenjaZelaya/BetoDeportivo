@@ -33,7 +33,7 @@ const Favoritos = () => {
           {favoritos.map((producto) => (
             <div key={producto.id} className="border rounded-lg shadow-md p-4 flex flex-col bg-white hover:shadow-lg transition">
               <img
-                src={`http://localhost:5000${producto.portada || producto.imagenes?.[0]}`}
+                src={`https://betodeportivo-backend.onrender.com${producto.portada || producto.imagenes?.[0]}`}
                 alt={producto.nombre}
                 className="w-full h-56 object-cover rounded mb-4"
               />

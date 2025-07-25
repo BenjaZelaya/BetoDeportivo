@@ -57,7 +57,7 @@ const CrearProducto = () => {
     data.append('portadaIndex', portadaIndex);
 
     try {
-      await axios.post('http://localhost:5000/api/productos', data);
+      await axios.post(' https://betodeportivo-backend.onrender.com/api/productos', data);
       setMensaje('✅ Producto creado con éxito');
       setForm({ nombre: '', descripcion: '', precio: '', stock: '', sexo: '', categoria: '', color: '' });
       setImagenes([]);

@@ -19,8 +19,8 @@ const Tienda = ({ sexoFijo = null }) => {
   useEffect(() => {
     const query = getQuery();
     const url = query.trim()
-      ? `http://localhost:5000/api/productos/buscar?q=${encodeURIComponent(query)}`
-      : 'http://localhost:5000/api/productos';
+      ? ` https://betodeportivo-backend.onrender.com/api/productos/buscar?q=${encodeURIComponent(query)}`
+      : ' https://betodeportivo-backend.onrender.com/api/productos';
 
     fetch(url)
       .then(res => res.json())
@@ -166,7 +166,7 @@ const Tienda = ({ sexoFijo = null }) => {
                 className="border border-gray-200 hover:border-black p-4 rounded-lg bg-white shadow hover:shadow-md transition-all cursor-pointer no-underline text-black hover:text-black"
               >
                 <img
-                  src={p.portada ? `http://localhost:5000${p.portada}` : 'http://localhost:5000/uploads/default.png'}
+                  src={p.portada ? ` https://betodeportivo-backend.onrender.com${p.portada}` : ' https://betodeportivo-backend.onrender.com/uploads/default.png'}
                   alt={p.nombre}
                   className="w-full h-30 object-cover rounded mb-3 transition-transform duration-300 hover:scale-105"
                 />

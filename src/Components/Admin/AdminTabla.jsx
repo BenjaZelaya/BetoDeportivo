@@ -49,7 +49,7 @@ const AdminTabla = () => {
     nuevasImagenes.forEach(file => data.append('imagenes', file));
 
     try {
-      await axios.put(`http://localhost:5000/api/productos/${productoEditando.id}`, data);
+      await axios.put(` https://betodeportivo-backend.onrender.com/api/productos/${productoEditando.id}`, data);
       setModalAbierto(false);
       cargarProductos();
     } catch (err) {
@@ -86,7 +86,7 @@ const AdminTabla = () => {
               <td>{p.color}</td>
               <td>
                 {(p.imagenes || []).map((img, i) => (
-                  <img key={i} src={`http://localhost:5000${img}`} alt="mini" width="50" />
+                  <img key={i} src={` https://betodeportivo-backend.onrender.com${img}`} alt="mini" width="50" />
                 ))}
               </td>
               <td>
@@ -136,7 +136,7 @@ const AdminTabla = () => {
 
             <input type="file" multiple accept="image/*" onChange={handleNuevasImagenes} />
             {productoEditando.imagenes?.map((img, i) => (
-              <img key={i} src={`http://localhost:5000${img}`} alt="existente" width="60" />
+              <img key={i} src={` https://betodeportivo-backend.onrender.com${img}`} alt="existente" width="60" />
             ))}
 
             <button onClick={guardarCambios}>Guardar</button>

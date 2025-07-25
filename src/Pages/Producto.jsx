@@ -10,11 +10,11 @@ const Producto = () => {
   const [imagenPrincipal, setImagenPrincipal] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/productos/${id}`)
+    fetch(` https://betodeportivo-backend.onrender.com/api/productos/${id}`)
       .then(res => res.json())
       .then(data => {
         setProducto(data);
-        setImagenPrincipal(`http://localhost:5000${data.portada || data.imagenes?.[0]}`);
+        setImagenPrincipal(` https://betodeportivo-backend.onrender.com${data.portada || data.imagenes?.[0]}`);
       })
       .catch(err => console.error('Error al cargar producto:', err));
   }, [id]);
@@ -72,10 +72,10 @@ const Producto = () => {
             {producto.imagenes?.map((img, i) => (
               <img
                 key={i}
-                src={`http://localhost:5000${img}`}
+                src={` https://betodeportivo-backend.onrender.com${img}`}
                 alt={`miniatura-${i}`}
                 className={`w-20 h-20 object-cover border rounded cursor-pointer ${imagenPrincipal.endsWith(img) ? 'ring-2 ring-black' : ''}`}
-                onClick={() => setImagenPrincipal(`http://localhost:5000${img}`)}
+                onClick={() => setImagenPrincipal(` https://betodeportivo-backend.onrender.com${img}`)}
               />
             ))}
           </div>

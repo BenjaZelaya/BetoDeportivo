@@ -35,7 +35,7 @@ const Carrito = () => {
         ) : (
           carrito.map((producto, index) => {
             const imagenMostrar = producto.portada || (producto.imagenes?.[0] || '');
-            const urlCompleta = `http://localhost:5000${imagenMostrar}`;
+            const urlCompleta = `https://betodeportivo-backend.onrender.com${imagenMostrar}`;
             return (
               <div
                 key={index}
