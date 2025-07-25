@@ -44,7 +44,7 @@ const ProductoSimilares = ({ categoriaActual, idActual }) => {
           >
             <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
               <img
-                src={`http://localhost:5000${p.portada || p.imagenes?.[0]}`}
+                src={`https://betodeportivo-backend.onrender.com${p.portada || p.imagenes?.[0]}`}
                 alt={p.nombre}
                 className="w-full h-auto object-cover rounded mb-3 transition-transform duration-300 hover:scale-105"
               />
