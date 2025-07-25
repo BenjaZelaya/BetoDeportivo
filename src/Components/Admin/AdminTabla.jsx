@@ -16,13 +16,13 @@ const AdminTabla = () => {
   }, []);
 
   const cargarProductos = async () => {
-    const res = await axios.get('http://localhost:5000/api/productos');
+    const res = await axios.get('https://betodeportivo-backend.onrender.com/api/productos');
     setProductos(res.data);
   };
 
   const eliminarProducto = async (id) => {
     if (!window.confirm('¿Eliminar producto?')) return;
-    await axios.delete(`http://localhost:5000/api/productos/${id}`);
+    await axios.delete(`https://betodeportivo-backend.onrender.com/api/productos/${id}`);
     cargarProductos();
   };
 

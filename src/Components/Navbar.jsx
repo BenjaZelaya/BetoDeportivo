@@ -126,6 +126,10 @@ const Navbar = () => {
               <Link to="/Login" >
                 <button className="bg-white text-gray-800 hover:text-gray-500 text-decoration-none transition px-6 py-2 rounded-full">Login</button>
               </Link>
+
+              <Link to="/Register" >
+                <button className="bg-white text-gray-800 hover:text-gray-500 text-decoration-none transition px-6 py-2 rounded-full">Register</button>
+              </Link>
             </div>
 
             {/* Botón hamburguesa para mobile */}
@@ -185,6 +189,10 @@ const Navbar = () => {
 
             <Link to="/Login" className="mt-6">
               <button className="bg-white text-black px-6 py-2 rounded-full">Login</button>
+            </Link>
+
+            <Link to="/Register" className="mt-6">
+              <button className="bg-white text-black px-6 py-2 rounded-full">Register</button>
             </Link>
 
           </div>
