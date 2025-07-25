@@ -123,7 +123,7 @@ const Navbar = () => {
                 <BsBookmarkHeart />
               </Link>
 
-              <Link to="/Admin" >
+              <Link to="/Login" >
                 <button className="bg-white text-gray-800 hover:text-gray-500 text-decoration-none transition px-6 py-2 rounded-full">Login</button>
               </Link>
             </div>
@@ -183,7 +183,7 @@ const Navbar = () => {
               </Link>
 
 
-            <Link to="/Admin" className="mt-6">
+            <Link to="/Login" className="mt-6">
               <button className="bg-white text-black px-6 py-2 rounded-full">Login</button>
             </Link>
 
