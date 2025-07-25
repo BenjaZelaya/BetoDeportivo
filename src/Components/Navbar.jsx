@@ -178,6 +178,10 @@ const Navbar = () => {
               <BsBagCheck />
             </Link>
 
+            <Link to="/Favoritos" className='mt-6 text-4xl text-gray-100 hover:text-gray-500 text-decoration-none transition'>
+                <BsBookmarkHeart />
+              </Link>
+
 
             <Link to="/Admin" className="mt-6">
               <button className="bg-white text-black px-6 py-2 rounded-full">Login</button>

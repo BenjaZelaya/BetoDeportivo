@@ -311,5 +311,39 @@
     ],
     "portada": "/uploads/1752717003846.jpg",
     "color": "amarillo"
+  },
+  {
+    "id": 20,
+    "nombre": "Zapatillas de Entrenamiento Amplimove",
+    "title": "Zapatillas de Entrenamiento Amplimove",
+    "descripcion": "Zapatillas específicas para entrenamiento, fabricadas en parte con materiales reciclados.\r\nSi aspirás a entrenar como un profesional o simplemente a elevar tu entrenamiento, estas zapatillas de entrenamiento adidas te ayudarán a liberar tu potencial atlético. Con un exterior de malla sin costuras y revestimientos de TPU por zonas que abrazan tu pie, estas zapatillas ligeras pero de soporte te mantienen estable en movimientos multidireccionales. Una mediasuela esculpida añade comodidad y flexibilidad, mientras que la suela en todas las direcciones se agarra al suelo para impulsar tu rendimiento.",
+    "precio": 109.999,
+    "stock": 9,
+    "sexo": "mujer",
+    "categoria": "deportes",
+    "color": "rosa",
+    "imagenes": [
+      "/uploads/1752975532142.jpg",
+      "/uploads/1752975532144.jpg",
+      "/uploads/1752975532148.jpg"
+    ],
+    "portada": "/uploads/1752975532142.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "Campera ligera con 2,5 capas Terrex Xperior Climaproof",
+    "title": "Campera ligera con 2,5 capas Terrex Xperior Climaproof",
+    "descripcion": "Cualquier clima es bueno para correr con esta campera de trail running adidas Terrex en tu mochila. Su corte ajustado mantiene un perfil estilizado, y su estructura de 2,5 capas la hace ligera y plegable. Bolsillos con cierre que mantienen seguras llaves, tarjetas o teléfono para que te concentres en el camino. La tecnología CLIMAPROOF te protege del clima y ayuda a eliminar el sudor para que puedas rendir sin restricciones y con comodidad.",
+    "precio": 209.999,
+    "stock": 12,
+    "sexo": "mujer",
+    "categoria": "ropa",
+    "color": "naranja",
+    "imagenes": [
+      "/uploads/1752975966297.jpg",
+      "/uploads/1752975966298.jpg",
+      "/uploads/1752975966299.jpg"
+    ],
+    "portada": "/uploads/1752975966297.jpg"
   }
 ]

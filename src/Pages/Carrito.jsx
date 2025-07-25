@@ -74,7 +74,7 @@ const Carrito = () => {
           Total a pagar: ${total.toLocaleString()}
         </div>
         <button
-          className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition"
+          className="w-full py-3 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition"
           disabled={carrito.length === 0}
           onClick={() => setShowModal(true)}
         >

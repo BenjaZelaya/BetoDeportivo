@@ -4,6 +4,7 @@ import Background from './Pages/Background';
 import Tienda from './Pages/Tienda';
 import Producto from './Pages/Producto';
 import Carrito from './Pages/Carrito';
+import Favoritos from './Pages/Favoritos';
 import Admin from './Pages/Admin';
 import CarouselSuperior from './Components/CarouselSuperior';
 import Navbar from './Components/Navbar';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/nino" element={<Tienda sexoFijo="niño" />} />
         <Route path="/producto/:id" element={<Producto />} />
         <Route path="/Carrito" element={<Carrito />} />
+        <Route path="/Favoritos" element={<Favoritos />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
       <Footer />
