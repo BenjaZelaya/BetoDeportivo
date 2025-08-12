@@ -7,6 +7,7 @@ import Carrito from './Pages/Carrito';
 import Favoritos from './Pages/Favoritos';
 import Admin from './Pages/Admin';
 import Register from './Pages/Login/Register';
+import Login from './Pages/Login/Login';
 import CarouselSuperior from './Components/CarouselSuperior';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Favoritos" element={<Favoritos />} />
         <Route path="/Admin" element={<Admin />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
       </Routes>
       <Footer />

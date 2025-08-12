@@ -8,13 +8,18 @@ const Producto = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [imagenPrincipal, setImagenPrincipal] = useState('');
+  const [esFavorito, setEsFavorito] = useState(false);
 
   useEffect(() => {
-    fetch(` https://betodeportivo-backend.onrender.com/api/productos/${id}`)
+    fetch(`https://betodeportivo-backend.onrender.com/api/productos/${id}`)
       .then(res => res.json())
       .then(data => {
         setProducto(data);
-        setImagenPrincipal(` https://betodeportivo-backend.onrender.com${data.portada || data.imagenes?.[0]}`);
+        setImagenPrincipal(`https://betodeportivo-backend.onrender.com${data.portada || data.imagenes?.[0]}`);
+
+        // Verificar si ya está en favoritos
+        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        setEsFavorito(favoritos.some(p => p.id === data.id));
       })
       .catch(err => console.error('Error al cargar producto:', err));
   }, [id]);
@@ -49,6 +54,33 @@ const Producto = () => {
     });
   };
 
+  const agregarAFavoritos = (producto) => {
+    const favoritosActuales = JSON.parse(localStorage.getItem('favoritos')) || [];
+    const yaExiste = favoritosActuales.some(p => p.id === producto.id);
+
+    if (yaExiste) {
+      Swal.fire({
+        icon: 'info',
+        title: 'Ya está en favoritos',
+        text: 'Este producto ya fue agregado.',
+        confirmButtonColor: '#000'
+      });
+      return;
+    }
+
+    const nuevosFavoritos = [...favoritosActuales, producto];
+    localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
+    setEsFavorito(true);
+
+    Swal.fire({
+      icon: 'success',
+      title: '¡Añadido a favoritos!',
+      text: `${producto.nombre} fue agregado a tus favoritos.`,
+      timer: 1500,
+      showConfirmButton: false
+    });
+  };
+
   return (
     <div>
       <div className='mx-8 display-flex flex-row gap-2 my-4 text-sm '>
@@ -72,10 +104,10 @@ const Producto = () => {
             {producto.imagenes?.map((img, i) => (
               <img
                 key={i}
-                src={` https://betodeportivo-backend.onrender.com${img}`}
+                src={`https://betodeportivo-backend.onrender.com${img}`}
                 alt={`miniatura-${i}`}
                 className={`w-20 h-20 object-cover border rounded cursor-pointer ${imagenPrincipal.endsWith(img) ? 'ring-2 ring-black' : ''}`}
-                onClick={() => setImagenPrincipal(` https://betodeportivo-backend.onrender.com${img}`)}
+                onClick={() => setImagenPrincipal(`https://betodeportivo-backend.onrender.com${img}`)}
               />
             ))}
           </div>
@@ -89,16 +121,20 @@ const Producto = () => {
           <p className="text-2xl font-semibold text-black ">${producto.precio}</p>
           <p className="text-2xl text-gray-700">{producto.descripcion}</p>
 
-          <div className='w-full h-full flex items-end'>
+          <div className='w-full h-full flex items-end gap-3'>
             <button
               className="mt-auto w-auto h-20 px-6 py-3 bg-black text-white text-xl rounded hover:bg-gray-800 transition"
               onClick={() => agregarAlCarrito(producto)}
             >
               Añadir al carrito
             </button>
-            <div className='mt-auto w-auto h-20 px-6 py-3 bg-white text-black text-4xl rounded hover:bg-gray-800 transition'>
-              <Link to="/Favoritos" className='text-gray-700 hover:text-black'><BsBookmarkHeart /></Link>
-            </div>
+            <button
+              className={`mt-auto w-auto h-20 px-6 py-3 bg-white text-4xl rounded transition flex items-center justify-center 
+                ${esFavorito ? 'text-red-500 hover:text-red-600' : 'text-black hover:text-gray-800'}`}
+              onClick={() => agregarAFavoritos(producto)}
+            >
+              <BsBookmarkHeart />
+            </button>
           </div>
         </div>
       </div>
